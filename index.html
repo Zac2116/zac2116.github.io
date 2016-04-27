@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<head>  
+	<title>Million Songs</title>
+	<link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+	<div class = "main-container">
+
+		<div id="title">
+			<center><h1>What is mainstream music?</h1></center>
+			<center><h3>Million Songs Dataset Exploration</h3></center>
+			<center><h4 style = "font-weight:normal">Jingying Zhou, Yibo Zhu, Yimin Zhang, Ziyue Jin, Ziyue Wu</h4></center>
+			<center><h4 style = "font-weight:normal">April 24, 2016</h4></center>
+		</div>
+
+		<div id = "preprocessing">
+			<h3>Data and Methodology</h3>
+			<h4>Data Integration</h4>
+			<p>We mainly integrated four datasets: </p>
+			<ul>
+				<li><b>Million Song Dataset(MSD): A random subset</b></li>		
+			<li><b>User Preference: Echo Nest Tase Profile Data</b></li>
+			<li><b>Lyics BoW: musiXmatch Dataset</b></li>
+			<li><b>Genre: Tagtraum Genre Annotations Dataset</b></li>	        
+			</ul>
+
+
+			<p>
+				The cluster of songs:
+1. We used the user playcount data to work out the pairwise "distance" between songs  
+2. We calculated for the pairwise difference between songs across all extracted features  
+3. We used Random Forest to regress the song feature difference and "user defined features", and through the importance ranking we conclude what features contribute most strongly to the "user defined similarity"
+4. We performed hierachical clustering using only the features we selected from part 3 and then look into the sound feature, lyric topics; further we visualize and compare the results accross diffferent clusters  </p>
+		</div>
+
+		<div id = "eda">
+			<h3>Exploratory Our Dataset</h3>
+			<ul>
+			<li>1. Million Songs Dataset.</li>		
+			<li>2. Artists are mainly from North America and Europe.</li>
+			<li>3. Bubble size stands for number of records.</li>		
+			<li>4. Color stands for hotness of the artists.</li>         
+			</ul>
+
+			<div id = "map">
+				<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+				<div class='tableauPlaceholder' style='width: 1004px; height: 869px;'>
+					<noscript>
+						<a href='#'>
+						<img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ED&#47;EDA_alll_map&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+						</a>
+					</noscript>
+
+					<object class='tableauViz' width='1004' height='869' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+					 	<param name='site_root' value='' />
+					 	<param name='name' value='EDA_alll_map&#47;Dashboard1' />
+					 	<param name='tabs' value='no' />
+					 	<param name='toolbar' value='yes' />
+					 	<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ED&#47;EDA_alll_map&#47;Dashboard1&#47;1.png' /> 
+					 	<param name='animate_transition' value='yes' />
+					 	<param name='display_static_image' value='yes' />
+					 	<param name='display_spinner' value='yes' />
+					 	<param name='display_overlay' value='yes' />
+					 	<param name='display_count' value='yes' />
+					 	<param name='showTabs' value='y' />
+					 </object>
+				</div>
+			
+			</div>
+			<p>Overview of our songs</p>
+			<ul>
+			<li>1. Amount records increasing faster and faster.</li>		
+			<li>2. After 2005 a lot of records weren't collected in the dataset .</li>
+			<li>3. Golden age of rock starts from 1970s (Wiki).</li>		
+			<li>4. 1977 the first metal record appeared.</li>      
+			<li>5. As an old mainstream music, jazz is becoming less popular.</li>     
+			</ul>
+
+			<div id="genres">
+				<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+				<div class='tableauPlaceholder' style='width: 1004px; height: 869px;'>
+					<noscript>
+						<a href='#'>
+							<img alt='Genre ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ge&#47;Genres_2&#47;Genre&#47;1_rss.png' style='border: none' />
+						</a>
+					</noscript>
+					<object class='tableauViz' width='1004' height='869' style='display:none;'>
+						<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+						<param name='site_root' value='' />
+						<param name='name' value='Genres_2&#47;Genre' />
+						<param name='tabs' value='no' />
+						<param name='toolbar' value='yes' />
+						<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ge&#47;Genres_2&#47;Genre&#47;1.png' /> 
+						<param name='animate_transition' value='yes' />
+						<param name='display_static_image' value='yes' />
+						<param name='display_spinner' value='yes' />
+						<param name='display_overlay' value='yes' />
+						<param name='display_count' value='yes' />
+						<param name='showTabs' value='y' />
+					</object>
+				</div>
+			</div>
+
+		</div>
+		<a href="https://www.youtube.com/watch?v=FFvs49kdLaA"><p>Mainstream?</p></a>
+
+
+		<div>
+			<h3>How to Define a Mainstream Music?</h3>
+			<center><p style="font-size:50px;">Sound Features + Lyrics = Music</p></center>
+		</div>
+
+
+		<div id = "songs">
+			<h3>What Does the Sound Say?</h3>
+			<ul>
+			<li>1. Used all musics features for clusterings.</li>		
+			<li>2. Used Silhoutte methods to select number of clusters.</li>        
+			</ul>
+
+			<center>
+				<img src="img/select_5.jpeg">
+			</center>
+
+			<center>
+				<p><a href="blabla.html">Projected on first two dimensions in PCA</a></p>
+				<img src = "img/select_dimension.png">
+			</center>
+
+		</div>
+
+
+		<div id = "lyrics">
+			<h3>Lyrics Clusters</h3>	
+			<ul>
+			<li>1. Used bag of words from each song.</li>		
+			<li>2. Choose the number of clusters based on the log likelihood.</li>        
+			</ul>
+			
+			<a href="vis/index.html"><center><img src="img/topic.jpg" ></center></a>
+			<p>	<a href="vis15/index_15.html">Topic modeling by 15 topics</a></p>
+		</div>
+
+		<div id = "comparison">
+			<h3>Comparison</h3>
+			<p>How are they related?</p>
+			
+			<center>
+				<img src="img/comparison.jpg">
+				<p>We obtained the Chi-squared test of independence with p-value = 2.2e-16 </p>
+			</center>
+
+			<h3>Here is our mainstream music formula</h3>
+
+			<h4>Sound Feature Cluster</h4>
+			<center><img src="img/soundFeatureStats.jpg"  width="600" height="400"></center>
+
+			<h4>Dominant Clusters of Topic</h4>
+			<center>
+				<img src="img/popwordcloud.jpg" >
+			</center>
+
+
+			<h4>Verify by adding users information?</h4>
+				<center><p style="font-size:50px;">Sound Features vs User defined Similarity</p></center>
+				<li>Sound Features: independent variables</li>
+				<li>User defined Similarity: dependent variables</li>
+				<li><b>Case control to subset the sparse data</b><br/></li>
+
+
+
+
+			<p><b>LASSO</b><br/>
+			<ul>
+				<li>
+				Temporal Feature: 'start_of_fade_out','nbeat','nbar','bt_skw','bt_kts','sc_mn','sc_md'<br/></li>
+				<li>melody Feature:'key', 'loudness', , 'ba_kts','timbre_mean9','timbre_median3', 'timbre_median4', 'timbre_median5','timbre_median7', 'timbre_median8', 'timbre_median9','timbre_median12', 'timbre_std4'<br/></li>
+				<li>Other: 'year'<br/></li>
+			</ul>
+			</p>
+
+			<center><img src="img/hclust.jpg" ></center>
+			
+
+			<p><b>Random Forest:</b><br/>
+				<center><img src="img/rf.jpg" width="600" height="400"></center>
+			</p>
+			<center><img src="img/rf_cluster.png" width="600" height="400"></center>
+			
+			<p>Most of tracks defined in our mainstream formula are falling into our largest clusters on the above models: (1154/1175) </p>
+
+
+		</div>
+
+
+
+
+	</div>
+</body>

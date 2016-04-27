@@ -1,0 +1,67 @@
+.main-container {
+	  max-width: 940px;
+	  margin-left: auto;
+	  margin-right: auto;
+}
+
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+img {
+  max-width:100%;
+  height: auto;
+}
+	
+h1 {
+  font-size: 34px;
+  font-family: "HelveticaNeue-CondensedBlack";
+
+}
+
+h1.title {
+  font-size: 38px;
+  font-family: "Helvetica Neue";
+  
+}
+	
+h2 {
+  color: red;
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+/*   color: green; */
+  font-family: "Helvetica Neue";color:#446396;/* #3e88b6 */;/* #456494; */
+  }
+h4 {
+  font-size: 18px;
+  font-family: "Helvetica Neue"; color:#446396;/* #446396 */
+}
+h5 {
+  font-size: 17px;
+   font-family: 'Lobster Two', cursive; color:#3399ff;font-weight:normal;
+}
+h6 {
+  font-size: 12px;
+}
+p {
+  font-family: "Helvetica Neue";
+}
+
+
+ul {
+    
+    padding: 20px;
+    font-family: "Helvetica Neue";
+}
+
+
+.tabbed-pane {
+  padding-top: 12px;
+}
+
+button.code-folding-btn:focus {
+  outline: none;
+}

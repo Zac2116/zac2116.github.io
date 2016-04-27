@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>LDAvis</title>
+    <script src="d3.v3_15.js"></script>
+    <script src="ldavis_15.js"></script>
+    <link rel="stylesheet" type="text/css" href="lda_15.css">
+  </head>
+
+  <body>
+  <center>
+    <h3>15 Topics for Lyrics</h3>
+    <div style="zoom: 0.85;">
+    <div id = "lda_15"></div>
+    <script>
+      var vis = new LDAvis("#lda_15", "lda_15.json");
+    </script>
+    </div>
+    </center>
+  </body>
+
+</html>
