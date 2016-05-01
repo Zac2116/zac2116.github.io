@@ -32,7 +32,7 @@
 			<ol type="1">
 			<li>we  applied sound characteristics(like tempo, loudness, pitch and other 100 features) to get hierarchical clustering of songs</li>
 			<li>we used LDA to generate topic model of lyrics, and thus gained clusters of songs based on bag of words description.</li>
-			<li>We further used the user playcount data to work out the pairwise "distance" between songs, and thus calculated the used-defined similarity. So that user-defined clusters can be reached by feature selection and </li>
+			<li>We further used the user playcount data to work out the pairwise "distance" between songs, and thus calculated the used-defined similarity. So that user-defined clusters can be reached by feature selection.</li>
 			<li>We visualized and discussed the statistically significant link between lyrics and sound characteristic of songs.</li>
 			<li>Our results can be formed into a good song recommendation system, which incorporates user preference, sound characteristics and lyrics preference.</li>
 		</div>
@@ -142,7 +142,7 @@
 
 
 		<div id = "lyrics">
-			<h3>Part2:Lyrics Cluster Analysis</h3>	
+			<h3>Part2: Lyrics Cluster Analysis</h3>	
 			<ul>
 			<li>1. Used bag of words from each song.</li>		
 			<li>2. Choose the number of clusters based on the log likelihood.</li>   
@@ -156,14 +156,14 @@
 		</div>
 
 		<div id = "comparison">
-			<h3>Comparison Between Sound Clusters and lyricc Clusters</h3>
+			<h3>Comparison Between Sound Clusters and lyrics Clusters</h3>
 			<p>How are these two kinds of music clusters related?</p>
 			
 			<center>
 				<img src="img/comparison.jpg">
 			</center>
             	<p>We obtained the Chi-squared test of independence with p-value = 2.2e-16, so we find that lyrics has a strong corelation with sound characteristics. </p>
-                <p>The Strong Coorelation between lyrics and sound can help us dig out insights on mainsteam music. As what we can see in the above bubble figure(classifier overlap), we find topic model and sound 
+                <p>The Strong coorelation between lyrics and sound can help us dig out insights on mainsteam music. As what we can see in the above bubble figure(classifier overlap), we find topic model and sound 
                     hierachical has a dominate overlap in (1,1), (1,6), (1,10). The size-dominated bubbles themselves show they are more prone to be mainstream music, because there are more songs in those clusters which are similar to each other. 
                     And this is how we define the mainstream music. Furthermore, the common occurrence means that mainstream music share some common characteristics in sound and lyrics!
                 </p>
